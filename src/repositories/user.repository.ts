@@ -1,6 +1,7 @@
 import db from "../db";
 import User from "../models/user.model";
 import DatabaseError from "../models/errors/database.error.model";
+import config from 'config';
 
 class UserRepository {
 
@@ -39,7 +40,7 @@ class UserRepository {
                 username,
                 password
             )
-            VALUES ($1, crypt($2, 'my_salt'))
+            ALUES ($1, crypt($2, '${authenticationCryptKey}'))
             RETURNING uuid
         `;
 
@@ -55,7 +56,7 @@ class UserRepository {
             UPDATE application_user 
             SET 
                 username = $1,
-                password = crypt($2, 'my_salt')
+                password = crypt($2, '${authenticationCryptKey}')
             WHERE uuid = $3
         `;
 
@@ -80,7 +81,7 @@ class UserRepository {
                 SELECT uuid, username
                 FROM application_user
                 WHERE username = $1
-                AND password = crypt($2, 'my_salt')
+                AND password = crypt($2, '${authenticationCryptKey}')
             `;
             const values = [username, password];
             const { rows } = await db.query<User>(query, values);

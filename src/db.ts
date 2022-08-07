@@ -1,6 +1,7 @@
 import { Pool } from "pg";
+import config from 'config';
 
-const connectionString = '';
+const connectionString = config.get<string>('database.uri');
 
 const db = new Pool({ connectionString });
 
