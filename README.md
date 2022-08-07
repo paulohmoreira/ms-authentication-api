@@ -10,13 +10,22 @@ Projeto desenvolvido com os conhecimentos adquiridos no bootcamp Impulso JavaScr
 * jsonwebtoken
 * pg (banco de dados postgress)
 
-## Banco de dados
+## Configuração do Banco de dados e Chave de autenticação
 O db foi criado na nuvem, utilizando o serviço gratuito do [ElephantSQL](https://customer.elephantsql.com/)
 Para configurar o database criado no ElephantSQL basta adionar a URL gerada no site dentro do arquivo
-db.ts na variável connectionString conforme o exemplo abaixo:
+de configuração conforme o exemplo abaixo:
 
 ```bash
-$ const connectionString = 'postgres://xxxxx:xxxxxx@xxxxxx/xxxxx';
+$ "database": {
+$      "uri": 'postgres://xxxxx:xxxxxx@xxxxxx/xxxxx'
+$ }
+```
+
+E a sua chave de autenticação:
+```bash
+$ "authentication": {
+$        "cryptKey": "AUTHENTICATION_CRYPT_KEY"
+$ }
 ```
 
 ## Composição do projeto
