@@ -3,6 +3,8 @@ import User from "../models/user.model";
 import DatabaseError from "../models/errors/database.error.model";
 import config from 'config';
 
+const authenticationCryptKey = config.get<string>('authentication.cryptKey');
+
 class UserRepository {
 
     async findAllUsers(): Promise<User[]>{
@@ -40,7 +42,7 @@ class UserRepository {
                 username,
                 password
             )
-            ALUES ($1, crypt($2, '${authenticationCryptKey}'))
+            VALUES ($1, crypt($2, '${authenticationCryptKey}'))
             RETURNING uuid
         `;
 
@@ -88,9 +90,8 @@ class UserRepository {
             const [user] = rows;
             return user || null;
         } catch (error) {
-            throw new DatabaseError("Erro na consulta por username and password", error);
-            
-        }    
+            throw new DatabaseError('Erro na consulta por username e password', error);
+        }
     }
 
 }
