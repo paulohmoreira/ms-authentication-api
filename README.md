@@ -11,9 +11,9 @@ Projeto desenvolvido com os conhecimentos adquiridos no bootcamp Impulso JavaScr
 * pg (banco de dados postgress)
 
 ## Banco de dados
-O db foi criado na nuvem, utilizando o serviço gratuito do [Link](https://customer.elephantsql.com/) ElephantSQL.
+O db foi criado na nuvem, utilizando o serviço gratuito do [ElephantSQL](https://customer.elephantsql.com/)
 Para configurar o database criado no ElephantSQL basta adionar a URL gerada no site dentro do arquivo
-db.ts na variável connctionString conforme o exemplo abaixo:
+db.ts na variável connectionString conforme o exemplo abaixo:
 
 ```bash
 $ const connectionString = 'postgres://xxxxx:xxxxxx@xxxxxx/xxxxx';
