@@ -49,9 +49,9 @@ $ npm run dev
 
 ## Links úteis
 
-[Link](https://node-postgres.com/api/pool) Documentação da biblioteca pg
-[Link](http://expressjs.com/en/starter/installing.html) Documentação do Express
-[Link](https://jwt.io/introduction) Documentação do JSON Web tokens
-[Link](https://npm.io/package/http-status-codes) Documentação do http-status-codes
-[Link](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html) Documentação do TypeScript
-[Link](https://nodejs.org/api/) Documentação do NodeJS
+* [Documentação da biblioteca pg](https://node-postgres.com/api/pool)
+* [Documentação do Express](http://expressjs.com/en/starter/installing.html) 
+* [Documentação do JSON Web tokens](https://jwt.io/introduction) 
+* [Documentação do http-status-codes](https://npm.io/package/http-status-codes) 
+* [Documentação do TypeScript](https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html) 
+* [Documentação do NodeJS](https://nodejs.org/api/) 
